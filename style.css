@@ -1,0 +1,70 @@
+body {
+  font-family: "arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(225, 225, 225);
+}
+
+#slide {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px grey;
+  transition: width 2s, height 2s, background-color 2s, transform 1s;
+}
+
+/*-----ZOOM DE L IMAGE AU SURVOL DE LA SOURIS-----*/
+#slide:hover {
+  transform: scale(1.2);
+}
+
+#slider {
+  position: relative;
+  width: 700px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#precedent,
+#suivant {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 5px;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+#precedent {
+  left: 0;
+}
+
+#suivant {
+  right: 0;
+}
+
+#suivant:hover,
+#precedent:hover {
+  background-color: rgba(108, 108, 108, 0.8);
+  transition: ease-out 0.3s;
+}
+
+/*-----------------RESPONSIVE-----------------*/
+@media all and (max-width: 600px) {
+  #slide {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media all and (max-width: 490px) {
+  #slide {
+    width: 250px;
+    height: 400px;
+  }
+}
